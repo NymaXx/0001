@@ -12,6 +12,7 @@ var screenDess;
 var screenSpeciall;
 var screenEntrada;
 let a, b, c, d, e, f, g, h, i, j, k, l, m, n, o;
+var biutton;
 var modal1, modal2;
 
 function preload(){
@@ -53,6 +54,7 @@ function setup(){
     resumeScreen = new ResumeScreen();
     screenProf= new screenProfile();
     modal1 = new Modal();
+    biutton = new Button();
 
      
 }
@@ -73,6 +75,7 @@ function draw(){
 
         case 2://pantalla del HOME o INICIO 
             screenP.paint();
+            console.log("re");
             break;
 
         case 3:// pantalla de seleccion de perfil
@@ -85,6 +88,7 @@ function draw(){
 
         case 5:// pantalla de seleccion de platillo RAPIDOS
             screenFastt.paint();
+            console.log("truee");
             break;
 
         case 6:// pantalla de seleccion de platillo POSTRES 
@@ -93,6 +97,7 @@ function draw(){
 
         case 7: //pantalla de ORDENAR 
             screenO.paint();
+            console.log("trues");
             break;
 
         case 8: //pantalla de PAGO
@@ -105,7 +110,7 @@ function draw(){
             break;
 
         case 10: //pantalla dE RESUMEN DEL PEDIDO
-                resumeScreen.paint();
+            resumeScreen.paint();
             break;
 
         case 11: // pantalla de  HISTORIAL
@@ -148,36 +153,36 @@ function mousePressed(){
             break;
 
         case 2://pantalla del HOME o INICIO 
-            screenP.goProfile();
-            screenP.goPrincipalFood();
-            screenP.goSweetFood();
-            screenP.goFastFood();
-            screenP.goEspecial();
-            screenP.goHistory();
+            biutton.goBar();
+            biutton.goTypesOfFood();
+            console.log("true");
             break;
 
         case 3:// pantalla de perfil
-            screenProf.logOut();
+            biutton.goBar();
+            biutton.logOut();
             break;
 
         case 4: // pantalla de seleccion de platillo ENTRADAS
-           
+            biutton.goBar();
             break;
 
-        case 5:// pantalla de seleccion de platillo RAPIDOS
-
+        case 5:// pantalla de seleccion de platillo RAPIDO
+            biutton.goBar();
+            biutton.selectSupremeN(); 
+             
             break;
 
         case 6:// pantalla de seleccion de platillo POSTRES 
-
+            biutton.goBar();
             break;
 
         case 7: //pantalla de ORDENAR 
-
+            biutton.goBar();
             break;
 
         case 8: //pantalla de PAGO
-
+            biutton.goBar();
             break;
 
         case 9: 
@@ -185,11 +190,11 @@ function mousePressed(){
             break;
 
         case 10: //pantalla de RESUMEN
-
+            biutton.goBar();
             break;
 
         case 11: // pantalla de HISTORIAL
-
+             biutton.goBar();
             break;
 
         case 12: 
@@ -201,7 +206,7 @@ function mousePressed(){
             break;
 
         case 14: //pantalla de PLATILLO ESPECIAL
-
+            biutton.goBar();
             break;
 
      
