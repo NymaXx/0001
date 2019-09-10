@@ -17,7 +17,7 @@ class ScreenLogin{
         this.inputArraylist = new Input [2];
         let incrementPosY=0;
         for(let i=0; i<this.inputArraylist.length; i++) {
-            this.inputArraylist[i] = new Input(p,200,250+incrementPosY);
+            this.inputArraylist[i] = new Input(p,258,780+incrementPosY);
             incrementPosY+=50;
         }
     }

@@ -152,7 +152,8 @@ function mousePressed(){
         case 0: // pantalla del LOGIN
             loginScreen.goHome();
             loginScreen.goRegister();
-            if(mouseX>=200 && mouseX<=400 && mouseY>=400 && mouseY<=450 && loginScreen.valid()) {
+            //boton de entrar
+            if(mouseX>=138 && mouseX<=361 && mouseY>=1021 && mouseY<=1095 && loginScreen.valid()) {
                 valid=true;
                 console.log(valid);
                 }
