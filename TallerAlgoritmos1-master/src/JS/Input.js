@@ -9,6 +9,11 @@ class Input {
         this.posY=posY;
     }
 
+    input(){
+      this.focusfocus=false;
+      this.text="";
+    }
+
     paint(){
         if(focus){
             stroke(255,0,0);

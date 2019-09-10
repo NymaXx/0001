@@ -14,6 +14,13 @@ var screenEntrada;
 let a, b, c, d, e, f, g, h, i, j, k, l, m, n, o;
 var modal1, modal2;
 
+//inputs
+
+let result="";
+let loginScreen;
+let valid;
+
+
 function preload(){
 a= loadImage("data/login.png"); //0
 b= loadImage("data/registro.png") //1
@@ -45,7 +52,9 @@ function setup(){
     screenDess = new screenDessert();
     screenSpeciall = new screenSpecial();
     screenR = new ScreenRegister();
-    screenL = new ScreenLogin();
+    //pantalla login
+    loginScreen=new ScreenLogin;
+
     screenP = new ScreenPrincipal();
     screenPay = new ScreenPayment();
     screenRec = new ScreenRecord();
@@ -62,9 +71,14 @@ function draw(){
    
     switch(screen){
         case 0: // pantalla del LOGIN
-            screenL.paint();
+            loginScreen.paint();
             resumeScreen.hoyFecha();
             
+            loginScreen.focusInputs(mouseX, mouseY);
+		
+		if(valid==true) {
+			console.log("entro");
+		}
             break;
 
         case 1:// pantalla de registro
@@ -136,9 +150,12 @@ function draw(){
 function mousePressed(){
     switch(screen){
         case 0: // pantalla del LOGIN
-            screenL.goHome();
-            screenL.goRegister();
-            
+            loginScreen.goHome();
+            loginScreen.goRegister();
+            if(mouseX>=200 && mouseX<=400 && mouseY>=400 && mouseY<=450 && loginScreen.valid()) {
+                valid=true;
+                console.log(valid);
+                }
             
             
             break;
@@ -213,5 +230,7 @@ function mousePressed(){
 }
 
 function keyPressed(){
-
+    if(key !=BACKSPACE) {
+        loginScreen.writeTextInput(key);
+        }
 }
